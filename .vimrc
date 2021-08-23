@@ -76,11 +76,12 @@ nmap <silent> gr <Plug>(coc-references)
 
 let mapleader = ","
 
-nnoremap <leader>s :prettier :w!<cr>
-nnoremap <leader>q :wq<cr>
+nnoremap <leader>s :prettier <cr> :w!<cr>
+nnoremap <leader>q :q!<cr>
+nnoremap <leader>w :w!<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>e :NERDTreeToggle<cr>
-nnoremap <leader>sr :!javac %<cr>
+nnoremap <leader>b :NERDTreeFocus<cr>
 nnoremap <leader>t :split<cr>
 
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
