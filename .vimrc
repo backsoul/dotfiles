@@ -2,8 +2,11 @@ set nocompatible
 set background=dark
 
 set bg=dark
+set encoding=UTF-8
 
 
+
+packloadall
 
 set mouse=a
 let NERDTreeShowHidden=1
@@ -39,11 +42,17 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'ekalinin/Dockerfile.vim'
 
+Plug 'ryanoasis/vim-devicons'
+
 Plug 'SirVer/ultisnips', {'for': ['sh', 'python', 'markdown']}
 Plug 'honza/vim-snippets', {'for': ['sh', 'python', 'markdown']}
 Plug 'davidhalter/jedi-vim'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'morhetz/gruvbox'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/0.x'
+  \ }
 
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -67,9 +76,8 @@ nmap <silent> gr <Plug>(coc-references)
 
 let mapleader = ","
 
-nnoremap <leader>s :w!<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>sq :wq!<cr>
+nnoremap <leader>s :prettier :w!<cr>
+nnoremap <leader>q :wq<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>e :NERDTreeToggle<cr>
 nnoremap <leader>sr :!javac %<cr>
